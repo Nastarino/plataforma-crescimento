@@ -36,7 +36,7 @@ jobs:
         echo "android.accept_sdk_license = True" >> buildozer.spec
         echo "android.build_tools_version = 33.0.0" >> buildozer.spec
         export BUILDOZER_ALLOW_root=1
-        buildozer -v android debug
+        yes | buildozer -v android debug
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
