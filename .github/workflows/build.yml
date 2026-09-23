@@ -12,6 +12,11 @@ jobs:
       - name: Checkout do Código
         uses: actions/checkout@v4
 
+      - name: Instalar Dependências do Sistema
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y git zip unzip openjdk-17-jdk autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev libtinfo5 cmake libffi-dev libssl-dev
+
       - name: Compilar com Buildozer
         uses: digreatbrian/buildozer-action@v2
         with:
